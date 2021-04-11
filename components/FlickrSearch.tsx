@@ -12,14 +12,15 @@ export function FlickrSearch() {
   }, [slug])
 
   const handleSearchInput = (e: React.FormEvent<HTMLInputElement>) => {
-      setSearch(e.currentTarget.value)
+    setSearch(e.currentTarget.value)
   }
 
-  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => e.target.select();
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) =>
+    e.target.select()
 
   const doSearch = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      router.push(`/${search}`)
+    e.preventDefault()
+    router.push(`/${search}`)
   }
 
   return (

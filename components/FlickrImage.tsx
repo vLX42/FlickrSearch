@@ -21,13 +21,16 @@ export function FlickrImage({ item }: Props) {
       />
       <p className="text-sm  absolute w-full right-0 bottom-0 p-3 truncate overflow-ellipsis overflow-hidden">
         {item.tags &&
-          item.tags.split(' ').slice(0, 5).map((tag) => (
-            <>
-              <Link href={`/${tag}`}>
-                <a>#{tag}</a>
-              </Link>{' '}
-            </>
-          ))}
+          item.tags
+            .split(' ')
+            .slice(0, 5)
+            .map((tag) => (
+              <>
+                <Link href={`/${tag}`}>
+                  <a>#{tag}</a>
+                </Link>{' '}
+              </>
+            ))}
       </p>
     </div>
   )

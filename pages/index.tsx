@@ -1,13 +1,10 @@
-import { FlickrFeed, FlickrSearch, FlickrLayout } from  '../components'
+import { FlickrFeed, FlickrSearch, FlickrLayout } from '../components'
 
 const Index = () => {
-
-
   return (
-
     <FlickrLayout>
-        <FlickrSearch />
-        <FlickrFeed />
+      <FlickrSearch />
+      <FlickrFeed />
     </FlickrLayout>
   )
 }
