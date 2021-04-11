@@ -15,7 +15,7 @@ export function FlickrFeed() {
         {isLoading ? (
           <FlickrLoading />
         ) : (
-          feed?.items.map((item) => <FlickrImage item={item} />)
+          feed?.items.map((item, index) => <FlickrImage key={index} item={item} />)
         )}
       </div>
     </>

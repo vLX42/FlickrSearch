@@ -19,17 +19,15 @@ export function FlickrImage({ item }: Props) {
         priority={true}
         className="object-contain h-48 w-full object-top"
       />
-      <p className="text-sm  absolute w-full right-0 bottom-0 p-3 truncate overflow-ellipsis overflow-hidden">
+      <p className="md:text-sm absolute w-full right-0 bottom-0 p-3 truncate overflow-ellipsis overflow-hidden">
         {item.tags &&
           item.tags
             .split(' ')
             .slice(0, 5)
             .map((tag) => (
-              <>
-                <Link href={`/${tag}`}>
-                  <a>#{tag}</a>
-                </Link>{' '}
-              </>
+              <Link key={tag} href={`/${tag}`}>
+                <a className="pr-3">#{tag}</a>
+              </Link>
             ))}
       </p>
     </div>
