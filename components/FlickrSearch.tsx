@@ -46,7 +46,7 @@ export function FlickrSearch() {
             x-model="q"
             onChange={handleSearchInput}
             onFocus={handleFocus}
-            className="w-full pl-4 text-sm outline-none focus:outline-none bg-transparent"
+            className="w-full pl-4 outline-none focus:outline-none bg-transparent"
           />
         </div>
       </div>
