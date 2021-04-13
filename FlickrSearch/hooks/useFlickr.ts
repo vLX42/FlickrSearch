@@ -6,11 +6,13 @@ import { fetcher } from '../lib'
 export function useFlickr() {
   const router = useRouter()
   const slug = router.query.slug || ''
+  const env = process.env.NODE_ENV
 
-  const { data, error, ...rest } = useSWR<Feed>(
-    `/api/getData?q=${slug}`,
-    fetcher
-  )
+  const url =
+    env == 'development'
+      ? `https://localhost:9099/api/FlickrSearch?tag=${slug}`
+      : `/api/getData?tag=${slug}`
+  const { data, error, ...rest } = useSWR<Feed>(url, fetcher)
 
   const isLoading = !data && !error
 
