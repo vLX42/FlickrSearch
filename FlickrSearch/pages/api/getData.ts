@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { q: searchQuery } = req.query
+  const { tags: searchQuery } = req.query
   async function getFlickrFromApi() {
     try {
       let url = `https://www.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=${searchQuery}`
